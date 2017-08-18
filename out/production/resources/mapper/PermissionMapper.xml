@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.restart1025.springbootmybatis.dao.PermissionDao">
+
+    <resultMap id="permissionMap" type="com.restart1025.springbootmybatis.entity.Permission">
+        <id property="id" column="id" />
+        <result property="permissionname" column="permissionname" />
+    </resultMap>
+
+    <select id="getByPermissionId" resultMap="permissionMap" parameterType="Map">
+        SELECT p.*
+        FROM t_permission p
+        WHERE p.id = #{id}
+    </select>
+
+    <select id="getPermissionByRoleId" parameterType="Map" resultMap="permissionMap">
+        SELECT DISTINCT p.*
+        FROM t_permission p LEFT JOIN t_role_permission trp ON p.id=trp.permission_id
+        WHERE trp.role_id = #{roleId}
+    </select>
+
+
+
+</mapper>

@@ -1,6 +1,6 @@
 server:
-  port: 8080
-##  context-path: /springboot
+  port: 80
+  context-path: /springboot
 ### 数据库配置
 spring:
     datasource:
@@ -21,4 +21,4 @@ logging:
 ### mybatis
 mybatis:
   type-aliases-package: com.restart1025.springbootmybatis.entity
-  mapper-locations: classpath*:**/*Mapper.xml
+  mapper-locations: classpath*:mapper/*Mapper.xml

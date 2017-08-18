@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.restart1025.springbootmybatis.dao.StudentDao">
+
+    <!-- type????Student??????????????? -->
+    <resultMap id="stuMap" type="com.restart1025.springbootmybatis.entity.Student">
+        <id property="id" column="id" />
+        <result property="name" column="name" />
+        <result property="sumScore" column="sum_score" />
+        <result property="avgScore" column="avg_score" />
+        <result property="age" column="age" />
+    </resultMap>
+
+    <select id="getById" resultMap="stuMap" parameterType="Map">
+        SELECT *
+        FROM student
+        WHERE ID = #{id}
+    </select>
+
+    <select id="likeName" resultMap="stuMap" parameterType="Map">
+        SELECT *
+        FROM student
+        WHERE NAME LIKE CONCAT('%',#{name},'%')
+    </select>
+
+    <select id="getNameById" resultMap="stuMap" parameterType="Map">
+        SELECT NAME
+        FROM student
+        WHERE ID = #{id}
+    </select>
+
+
+</mapper>
