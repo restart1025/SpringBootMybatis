@@ -5,6 +5,7 @@ import com.restart1025.springbootmybatis.entity.User;
 import com.restart1025.springbootmybatis.service.UserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -89,6 +90,12 @@ public class ShiroController {
         SecurityUtils.getSubject().logout();
         redirectAttributes.addFlashAttribute("message", "您已安全退出");
         return "redirect:/login";
+    }
+
+    @RequestMapping("/main")
+    @RequiresPermissions("user:query")//权限管理;
+    public String String (){
+        return "main";
     }
 
     @RequestMapping("/403")

@@ -654,14 +654,14 @@
 <script type="application/javascript">
     var data = [{
         resourceSn : "userSn",
-        resourceName : "首页",
+        resourceName : "用户展示",
         url : "user",
         logo : "fa-home",
         name : "Dashboard",
         children : []
     },{
         resourceSn : "indexSn",
-        resourceName : "首页",
+        resourceName : "日期展示",
         url : "index",
         logo : "fa-briefcase",
         name : "Dashboard 2",
@@ -674,18 +674,18 @@
         name : "Layouts",
         children : [{
             resourceSn : "childSn",
-            resourceName : "首页",
-            url : "index",
+            resourceName : "错误页面",
+            url : "403",
             name : "Session Timeout"
         },{
             resourceSn : "testSn",
-            resourceName : "首页",
-            url : "index",
+            resourceName : "插件页面",
+            url : "addtabs",
             name : "User Idle Timeout"
         },{
             resourceSn : "threeSn",
-            resourceName : "首页",
-            url : "index",
+            resourceName : "图片展示",
+            url : "image",
             name : "Language Switch Bar"
         },{
             resourceSn : "fourSn",

@@ -41,6 +41,7 @@ public class MyShiroRealm extends AuthorizingRealm {
 
         //2、到数据库查询是否有此对象
         User user = userService.getByUsername(loginName);
+        //User user = (User) principalCollection.getPrimaryPrincipal();
 
         //3、判断对象是否为空
         if( user != null )
