@@ -5,7 +5,7 @@ server:
 spring:
     datasource:
       driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://119.23.74.63:3306/springboot
+      url: jdbc:mysql://localhost:3306/springboot
       username: restart1025
       password: G101225
       type: com.zaxxer.hikari.HikariDataSource
